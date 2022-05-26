@@ -3,10 +3,10 @@
 return [
     'en' => [
         'display' => 'English',
-        //'flag-icon' => 'us'
+        'flag-icon' => 'us'
     ],
     'fr' => [
         'display' => 'Français',
-        //'flag-icon' => 'fr'
+        'flag-icon' => 'fr'
     ],
 ];
