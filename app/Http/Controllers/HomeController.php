@@ -1339,12 +1339,6 @@ class HomeController extends Controller
         return true;
     }
 
-        
-
-    public function languageDemo()
-    {
-    return view('languageDemo');
-    }
 
     public function delete_all_notification()
     {
