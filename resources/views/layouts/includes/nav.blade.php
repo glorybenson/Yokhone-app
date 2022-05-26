@@ -23,18 +23,21 @@
     </a>
 
     <ul class="nav user-menu">
+        
+
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                {{ Config::get('languages')[App::getLocale()] }}
+                <span class="flag-icon flag-icon-{{Config::get('languages')[App::getLocale()]['flag-icon']}}"></span> {{ Config::get('languages')[App::getLocale()]['display'] }}
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            @foreach (Config::get('languages') as $lang => $language)
+                @foreach (Config::get('languages') as $lang => $language)
                 @if ($lang != App::getLocale())
-                        <a class="dropdown-item" href="{{ route('lang.switch', $lang) }}"> {{$language}}</a>
+                <a class="dropdown-item" href="{{ route('lang.switch', $lang) }}"><span class="flag-icon flag-icon-{{$language['flag-icon']}}"></span> {{$language['display']}}</a>
                 @endif
-            @endforeach
+                @endforeach
             </div>
         </li>
+
 
         <li class="nav-item dropdown">
             <a href="#" class="nav-link notifications-item">
